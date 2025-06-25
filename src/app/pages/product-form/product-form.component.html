@@ -1,0 +1,19 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="productForm">
+  <label for="name">Product Name</label>
+  <input id="name" formControlName="name" placeholder="Product Name" required />
+  <div *ngIf="productForm.get('name')?.invalid && productForm.get('name')?.touched">
+    Product name is required.
+  </div>
+
+  <label for="category">Category</label>
+  <select id="category" formControlName="categoryId" required>
+    <option value="" disabled selected>Select a category</option>
+    <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+  </select>
+  <div *ngIf="productForm.get('categoryId')?.invalid && productForm.get('categoryId')?.touched">
+    Category is required.
+  </div>
+
+  <button type="submit" [disabled]="productForm.invalid">Add Product</button>
+</form>
+

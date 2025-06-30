@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { ProductListComponent } from './pages/product-list/product-list.component';
 import { CommonModule } from '@angular/common';
 
@@ -7,7 +6,6 @@ import { CommonModule } from '@angular/common';
   selector: 'app-root',
   standalone: true,
   imports: [
-    RouterOutlet, 
     ProductListComponent, 
     CommonModule
   ],
